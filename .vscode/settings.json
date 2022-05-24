@@ -1,0 +1,34 @@
+{
+    "files.autoSaveDelay": 60000,
+    "[python]": {
+        "editor.rulers": [
+            89
+        ],
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        "editor.defaultFormatter": "ms-python.python",
+        "editor.bracketPairColorization.enabled": true
+    },
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "-l 89"
+    ],
+    "python.sortImports.args": [
+        "--profile", "black"
+    ],
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#ff4081",
+        "editorOverviewRuler.border": "#ff0000"
+    },
+    "files.watcherExclude": {
+        "**/__pycache__/**": true,
+    },
+    "files.exclude": {
+        "**/__pycache__/**": true,
+        "**/.pytest_cache/**": true,
+        "**/.coverage**": true,
+        "**/.data**": true,
+    }
+}

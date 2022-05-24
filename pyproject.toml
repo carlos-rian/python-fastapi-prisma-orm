@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "python-fastapi-prisma-orm"
+version = "0.1.0"
+description = ""
+authors = ["carlos.rian <carlos.rian@quartile.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.78.0"
+uvicorn = "^0.17.6"
+prisma = "^0.6.6"
+uvloop = "^0.16.0"
+
+[tool.poetry.dev-dependencies]
+black = {version = "^22.3.0", allow-prereleases = true}
+isort = "^5.10.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
