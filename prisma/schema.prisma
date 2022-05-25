@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-py"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model People {
+  id         String   @id @default(uuid()) @db.Uuid
+  name       String   @db.VarChar(100)
+  age        Int
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  items Item[]
+
+  @@map("peoples")
+}
+
+model Item {
+  id         String   @id @default(uuid()) @db.Uuid
+  name       String   @db.VarChar(100)
+  price      Float
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  people_id String @db.Uuid
+  people    People @relation(fields: [people_id], references: [id])
+
+  @@map("items")
+}

@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+  # fastapi:
+  #   container_name: application-fastapi
+  #   command: "uvicorn app:app --reload --use-colors --host 0.0.0.0 --port 80"
+  #   build: ./
+  #   environment:
+  #     - DATABASE_URI=postgresql://username:password@db/fastapi_prisma
+  #   ports:
+  #     - 8000:80
+  #   depends_on:
+  #     - db
+  #   links:
+  #     - db:db
+  #   networks:
+  #     - default
+
+  db:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=fastapi_prisma
+    ports:
+      - 5432:5432
+    networks:
+      - default
