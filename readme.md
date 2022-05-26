@@ -18,8 +18,8 @@ poetry shell
 poetry install
 ```
 
-## Run python file
+## Up server using uvicorn
 
 ```sh
-python main.py
+uvicorn app.main:app --reload 
 ```
